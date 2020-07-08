@@ -11,6 +11,10 @@ class TaskItem extends Component {
 		this.props.onDeleteToDo(this.props.task.id);
 	}
 
+	onUpdateToDo = () => {
+		this.props.onUpdateToDo(this.props.task.id);
+	}
+
 	render() {
         var {task, index, onUpdateStatus} = this.props; // or truyen thang this.prop.task.name.
 
@@ -29,7 +33,7 @@ class TaskItem extends Component {
 					</span>
 				</td>
 				<td className="text-center">
-					<button type="button" className="btn btn-warning">
+					<button type="button" className="btn btn-warning" onClick = {this.onUpdateToDo}>
 						<span className="fa fa-pencil mr-5"></span>
 						Sửa
 					</button>
